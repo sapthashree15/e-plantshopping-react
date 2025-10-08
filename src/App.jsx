@@ -10,6 +10,10 @@ function App() {
     setShowProductList(true);
   };
 
+  const handleHomeClick = () => {
+    setShowProductList(false);
+  };
+
   return (
     <div className="app-container">
       {!showProductList && (
@@ -17,6 +21,7 @@ function App() {
           <div className="background-image"></div>
           <div className="content">
             <div className="landing_content">
+              
               <div className="divider"></div>
               <p>Where Green Meets Serenity</p>
               <button className="get-started-button" onClick={handleGetStartedClick}>
@@ -32,7 +37,7 @@ function App() {
 
       {showProductList && (
         <div className="product-list-container">
-          <ProductList />
+          <ProductList onHomeClick={handleHomeClick} />
         </div>
       )}
     </div>
